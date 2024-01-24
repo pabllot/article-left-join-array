@@ -5,7 +5,7 @@ In the world of databases and JavaScript, mastering the art of LEFT JOINs can si
 Explain the concept of LEFT JOIN in relational databases and why it is a valuable tool for combining data from two tables, even when there are no matching records.
 
 Imagine you have two arrays, leagues and clubs, representing data from different tables. Your goal is to merge these arrays based on a specific condition, resembling a LEFT JOIN scenario.
-js
+```js
 // Representing result of table 1 from the database
 const leagues = [
     { id: 1, name: 'Premier League'},
@@ -21,9 +21,9 @@ const clubs = [
     { league_id: 2, club_id: 3, club_name: 'Real Madrid' },
     { league_id: 3, club_id: 4, club_name: 'Juventus' },
 ];
-
+```
 in this case, I would want a result like that:
-js
+```js
 
 // Representing desired result from from the LEFT JOIN
 
@@ -57,14 +57,14 @@ const leagues = [
     }
 ];
 
-
+```
 
 Now, let's dive into the JavaScript solution that effectively performs the LEFT JOIN-like operation on the arrays leagues and clubs.
 
 Note:
 In this example we are using static data. But when we are receiving data from our database, it's important to make sure to surround the result of your query with square brackets [ ] to extract the first element of that result array, it is also crucial to handle the case when no rows are returned by the query. The check for an empty result (rows.length === 0) ensures that the function returns an empty array in such cases, preventing potential issues with the subsequent code.
 
-js
+```js
 export const getLeaguesDB = async () => {
     try {
         const conn = await connect();
@@ -122,7 +122,7 @@ export const getLeaguesDB = async () => {
         // Handle the error appropriately
     }
 };
-
+```
 
 
 In a real-world scenario, consider a sports-related application where you have data about football leagues and their associated clubs. The leagues array could represent information about different football leagues, while the clubs array contains data about clubs associated with those leagues.

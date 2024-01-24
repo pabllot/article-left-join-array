@@ -1,0 +1,1 @@
+# article-left-join-array
